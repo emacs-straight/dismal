@@ -1,6 +1,6 @@
-;;; dismal-menu3.el --- Menu system for using with Dismal spreadsheet
+;;; dismal-menu3.el --- Menu system for using with Dismal spreadsheet  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 1991, 2013-2018 Free Software Foundation, Inc.
+;; Copyright (C) 1991-2021  Free Software Foundation, Inc.
 
 ;; Author: Nigel Jenkins, nej@cs.nott.ac.uk
 ;;                        lpyjnej@psyc.nott.ac.uk 
@@ -34,6 +34,8 @@
 ;;    (use-global-map global-map))
 
 ;;; Code:
+
+(require 'make-km-aliases)
 
 (defvar dismal-menu-map (make-sparse-keymap))
 
@@ -286,9 +288,9 @@
 ;;;
 
 ;; Remove other edit, since it contains dangerous commands.
-(define-key dismal-menu-map [edit] 'undefined)
-(define-key dismal-menu-map [search] 'undefined)
-(define-key dismal-menu-map [files] 'undefined)
+(define-key dismal-menu-map [edit] #'undefined)
+(define-key dismal-menu-map [search] #'undefined)
+(define-key dismal-menu-map [files] #'undefined)
 
 (define-key dismal-menu-map [dedit]
   (cons "dEdit" (make-sparse-keymap "Dis Edit")))
